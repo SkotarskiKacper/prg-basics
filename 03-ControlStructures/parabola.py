@@ -1,15 +1,15 @@
-GridSize=20
+GridSize=10
+XOffset=-5
+YOffset=5
 
-
-for Y in range(GridSize):
-    for X in range(GridSize):
+for Y in range(GridSize+YOffset,-GridSize+YOffset,-1):
+    for X in range(-GridSize+XOffset,GridSize+XOffset,1):
         if X**2==Y:
             print("# ",end="")
-            #Row.insert("# ")
+        elif X==XOffset and Y==YOffset:
+            print("C ",end="")
         elif X==0 or Y==0:
             print(". ",end="")
-            #Row.insert(. ")
         else:
             print("  ",end="")
-            #Row.insert("  ")
     print("")
